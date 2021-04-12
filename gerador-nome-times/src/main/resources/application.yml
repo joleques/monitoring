@@ -1,0 +1,14 @@
+version: 01.00.00
+
+server:
+   port: ${SERVER_PORT}
+
+generator:
+   name-host: ${NAME_HOST}
+   name-PORT: ${NAME_PORT}
+   cidade-host: ${CIDADE_HOST}
+   cidade-PORT: ${CIDADE_PORT}
+
+spring:
+   application:
+     name: gerador-nome
