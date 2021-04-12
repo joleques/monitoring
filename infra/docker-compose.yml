@@ -38,7 +38,33 @@ services:
         depends_on:
           - elasticsearch
         networks:
-          - elknetwork
+          - elknetwork  
+    prometheus:
+        container_name: prometheus
+        image: prom/prometheus
+        command: ["--config.file=/etc/prometheus/prometheus.yml"]
+        volumes: 
+        - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+        ports:
+        - "9090:9090"
+        depends_on:
+        - elasticsearch
+        - kibana
+        networks:
+        - elknetwork      
+    metricbeat:
+        image: docker.elastic.co/beats/metricbeat:7.12.0
+        environment:
+        - setup.kibana.host=kibana:5601
+        - output.elasticsearch.hosts=["elasticsearch:9200"]
+        volumes: 
+        - ./metricbeat/prometheus.yml:/usr/share/metricbeat/modules.d/prometheus.yml
+        depends_on:
+          - elasticsearch
+          - kibana
+          - prometheus
+        networks:
+          - elknetwork    
 networks:
     elknetwork:
         driver: bridge
