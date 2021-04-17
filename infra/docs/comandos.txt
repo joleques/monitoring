@@ -1,0 +1,15 @@
+hosts: ["mongodb://importer:xpt9ttremoto@192.168.150.100:27017"]
+
+
+
+-- Mongo
+> mongo
+> use admin
+> db.createUser({ user: "admin" , pwd: "xpt9", roles: ["clusterMonitor"]})
+
+> mongo -u "admin" -p "xpt9" --authenticationDatabase "admin"
+
+
+
+-- Metricbeat
+> metricbeat setup -E setup.kibana.host=kibana:5601 -E output.elasticsearch.hosts=[\"elasticsearch:9200\"]

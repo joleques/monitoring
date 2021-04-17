@@ -1,0 +1,22 @@
+- module: kubernetes
+  enabled: true
+  metricsets:
+    - state_node
+    - state_daemonset
+    - state_deployment
+    - state_replicaset
+    - state_statefulset
+    - state_pod
+    - state_container
+    - state_cronjob
+    - state_resourcequota
+    - state_service
+    - state_persistentvolume
+    - state_persistentvolumeclaim
+    - state_storageclass
+    # Uncomment this to get k8s events:
+    #- event  period: 10s
+   hosts: ["kube-state-metrics:8080"]
+  # Enriching parameters:
+  add_metadata: true
+  #kube_config: ~/.kube/config

@@ -6,6 +6,7 @@
   metricsets: ["collector"]
   hosts: ["prometheus:9090"]
   metrics_path: /metrics
+      
   #metrics_filters:
   #  include: []
   #  exclude: []
