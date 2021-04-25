@@ -16,7 +16,7 @@
     - state_storageclass
     # Uncomment this to get k8s events:
     #- event  period: 10s
-   hosts: ["kube-state-metrics:8080"]
+  hosts: ["kube-state-metrics:8080"]
   # Enriching parameters:
   add_metadata: true
   #kube_config: ~/.kube/config

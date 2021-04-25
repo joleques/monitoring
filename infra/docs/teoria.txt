@@ -1,0 +1,94 @@
+O que é monitoramento?
+O monitoramento de rede é a capacidade de inferir a condição interna de um sistema. Também pode 
+ser definido como as ações envolvidas com a observabilidade: observar a qualidade do desempenho 
+do sistema ao longo de um período. O monitoramento de rede descreve a funcionalidade, bem-estar 
+e características relacionadas às condições internas do sistema. Em TI de negócios, monitoramento 
+se refere ao procedimento para distribuir informações de métricas de log de infraestrutura em 
+percepções acionáveis ​​e significativas.
+(https://www.motadata.com/pt/blog/observability-vs-monitoring/)
+
+-------------------------------------------------------------------------------------------------
+
+O monitoramento dá instrumentação às equipes de software, que coleta dados sobre seus sistemas 
+e permite que elas respondam rapidamente em caso de erros e problemas. Ou seja, o monitoramento 
+é a preparação de seus sistemas para coletar dados, com o objetivo de saber quando algo dá errado 
+e começar a responder rapidamente. 
+
+
+####################################################################################################
+
+O que é observabilidade?
+Observabilidade é a capacidade de inferir as condições internas de um sistema com base nas saídas 
+externas do sistema. Na teoria de controle, a observabilidade segue um mapeamento conceitual direto 
+para controlabilidade, que é a capacidade de controlar os estados internos de um sistema controlando 
+entradas externas. Na prática, no entanto, a controlabilidade é difícil de avaliar matematicamente; 
+portanto, a observabilidade do sistema é o método para avaliar as saídas para chegar a conclusões 
+sobre os estados internos da máquina.
+(https://www.motadata.com/pt/blog/observability-vs-monitoring/)
+
+-----------------------------------------------------------------------------------------------------
+
+Já a observabilidade é a prática de instrumentalizar esses sistemas com ferramentas para coletar 
+dados viáveis que esclareçam não só quando um erro ou problema ocorreu, mas ainda mais importante, 
+o porquê. O segundo item é o que as equipes precisam resolver depressa para solucionar emergências 
+em softwares modernos.
+
+-----------------------------------------------------------------------------------------------------
+
+Observabilidade, na teoria de controle, é uma medida quão bem podem os estados de um sistema ser 
+inferidos a partir do conhecimento de suas saídas externas. A observabilidade e a controlabilidade 
+de um sistema são conceitos matemáticos duais.
+
+Formalmente, um sistema é dito ser observável se, para qualquer possível sequência de vetores de 
+estado e de controle, o estado atual pode ser determinado em tempo finito usando apenas as saídas 
+(esta definição é voltada à representação no espaço de estados. Menos formalmente, isto significa 
+que a partir de saídas do sistema é possível determinar o comportamento de todo o sistema. Se um 
+sistema não é observável, isto significa que os valores atuais de alguns de seus estados não podem 
+ser determinados através dos sensores de saída : isso implica que o seu valor é desconhecido para o 
+controlador e, consequentemente, que ele não será capaz de cumprir as especificações de controle 
+referente a estas saídas.
+(https://pt.wikipedia.org/wiki/Observabilidade)
+
+
+######################################################################################################
+
+O monitoramento é uma ferramenta ou solução técnica que permite às equipes monitorar e entender o estado 
+dos sistemas. Ele é baseado na coleta de conjuntos predefinidos de métricas ou registros.
+
+A observabilidade é uma ferramenta ou uma solução técnica que permite às equipes depurar* ativamente o 
+sistema. A observabilidade é baseada em explorar propriedades e padrões não definidos com antecedência.
+(https://cloud.google.com/architecture/devops/devops-measurement-monitoring-and-observability?hl=pt-br)
+
+*Procurar, encontrar e corrigir, pela examinação do código de um programa, 
+as falhas ou erros de um computador.
+
+######################################################################################################
+
+Centralização de logs - padronização dos logs
+Saber se aplicação esta fora do ar
+Ter a capacidade de identificar erros no serviço (comportamento indesejaveis no sistemas)
+Ter a capacidade de dectar a degradação
+Ter informações suficientes para identificar a causa raiz
+Tracing
+
+Desafios.....
+O que coletar?
+    informações de Menos
+    informações de mais 
+informações em aplicações diferentes
+
+O que é um comportamento indesejavel da aplicação?
+
+
+
+
+(https://pt.wikipedia.org/wiki/Observabilidade)
+https://www.opservices.com.br/observabilidade/
+https://pt.wikipedia.org/wiki/Teoria_de_controle
+https://imasters.com.br/back-end/observabilidade-em-escala-construindo-o-ecossistema-de-alerta-da-uber
+(https://cloud.google.com/architecture/devops/devops-measurement-monitoring-and-observability?hl=pt-br)
+(https://www.motadata.com/pt/blog/observability-vs-monitoring/)
+
+https://www.youtube.com/watch?v=ZYZKh-DZSs8
+https://www.youtube.com/watch?v=mgznPM8o9mU
+https://www.youtube.com/watch?v=NT7Ere9KgbY&t=2098s

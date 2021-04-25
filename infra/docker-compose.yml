@@ -31,6 +31,7 @@ services:
             - 9600:9600
             - 8080:8080
             - 5000:5000
+            - 5044:5044
         volumes:
           - ./logstash:/usr/share/logstash/pipeline
         links:
@@ -38,20 +39,7 @@ services:
         depends_on:
           - elasticsearch
         networks:
-          - elknetwork  
-    prometheus:
-        container_name: prometheus
-        image: prom/prometheus
-        command: ["--config.file=/etc/prometheus/prometheus.yml"]
-        volumes: 
-        - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-        ports:
-        - "9090:9090"
-        depends_on:
-        - elasticsearch
-        - kibana
-        networks:
-        - elknetwork   
+          - elknetwork 
     mongodb:
         image : tutum/mongodb
         container_name: mongodb
@@ -72,19 +60,26 @@ services:
     metricbeat:
         image: docker.elastic.co/beats/metricbeat:7.12.0
         container_name: metricbeat
-        #command: "metricbeat setup -E setup.kibana.host=kibana:5601 -E output.elasticsearch.hosts=[\"elasticsearch:9200\"]"
         environment:
         - setup.kibana.host=kibana:5601
         - output.elasticsearch.hosts=["elasticsearch:9200"]
         volumes: 
-        - ./metricbeat/prometheus.yml:/usr/share/metricbeat/modules.d/prometheus.yml
         - ./metricbeat/mongodb.yml:/usr/share/metricbeat/modules.d/mongodb.yml
-        #- ./metricbeat/kubernetes.yml:/usr/share/metricbeat/modules.d/kubernetes.yml
+        - ./metricbeat/kubernetes.yml:/usr/share/metricbeat/modules.d/kubernetes.yml
         depends_on:
           - mongodb
-          - prometheus
         networks:
-          - elknetwork    
+          - elknetwork     
+    filebeat:
+        image: docker.elastic.co/beats/filebeat:7.12.0
+        container_name: filebeat
+        volumes: 
+        - ./logs-services:/usr/share/filebeat/logs
+        - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
+        depends_on:
+        - metricbeat
+        networks:
+        - elknetwork    
 networks:
     elknetwork:
         driver: bridge
